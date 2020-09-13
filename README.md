@@ -9,3 +9,6 @@ Sources: [video1](https://www.youtube.com/watch?v=dRCnccv_dVE) 80%
 HC - SR501
 PIEZO BUZZER
 ATmega328P Nano V3
+
+LED Dislplay
+https://www.youtube.com/watch?v=dZZynJLmTn8
