@@ -16,6 +16,7 @@ Sources:</br> [video1](https://www.youtube.com/watch?v=dRCnccv_dVE) 80%</br>
          [pir sensor](https://www.youtube.com/watch?v=FxaTDvs34mM)</br>
          [buzzer](https://www.americanpiezo.com/standard-products/buzzers.html)</br>
          [LCD Display](https://www.youtube.com/watch?v=dZZynJLmTn8)</br>
+         [Keypad 4x3](https://www.youtube.com/watch?v=d4bs8A8iMJ0&t=203s)</br>
          
 HC - SR501 </br>
 PIEZO BUZZER </br>
