@@ -1,34 +1,25 @@
 #include <LiquidCrystal.h>
+#include <Arduino.h>
 
-LiquidCrystal lcd(1, 2, 4, 5, 6, 7);
+LiquidCrystal lcd(1, 26, 27, 16, 17, 25);
 
 void setup() {
-  // put your setup code here, to run once:
-  lcd.begin(16,2);
+  pinMode(14, INPUT);
+  lcd.print("SENSOR ACTIVE");
+  delay(2000);
+  lcd.clear();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  lcd.print("Arduino LULW");
-  delay(3000);
-
-  lcd.setCursor(2, 1);
-  lcd.print("LCD TEST");
-  delay(3000);
-
-  lcd.clear();
-
-  lcd.blink();
-  delay(4000);
-
-  lcd.setCursor(7, 1);
-  delay(3000);
-
-  lcd.noBlink();
-
-  lcd.cursor();
-  delay(4000);
-  lcd.noCursor();
-
-  lcd.clear();
+  if(digitalRead(14)==HIGH){
+    lcd.print("PANIK!!!");
+    delay(1000);
+    lcd.clear();
+  }
+  else{
+    lcd.print("Kalm");
+    delay(1000);
+    lcd.clear();
+  }
+  
 }
