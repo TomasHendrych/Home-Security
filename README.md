@@ -26,3 +26,5 @@ KeyPad 4x3 </br>
 </br>
 
 https://forum.arduino.cc/index.php?topic=619914.0
+
+pio init -> pio boards -> pio init -b esp32dev ->
