@@ -5,7 +5,7 @@ Cílem projektu je vytvořit funkční model bezpečnostního systému za pomoc�
 Model bude fungovat na principu: Pir sensor zaznamená pohyb, ten spustí odpočet (např. 10 sec), do konce odpočtu má člověk možnost zadat čtyřmístný PIN kód na panelu, který alarm přeruší, jinak se spustí buzzer.
 
 Harmonogram:</br>
-         sestavení součástí - konec září</br>
+         sestavení součástí - konec září - HOTOVO</br>
          napsání kódu - konec října</br>
          případné sestavení modelu domu - konec listopadu</br>         
 
