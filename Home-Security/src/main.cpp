@@ -1,7 +1,21 @@
 #include <LiquidCrystal.h>
-//#include <Wire.h>
+#include <Wire.h>
 #include <Keypad.h>
-#include <Password.h>
+#include <password.h>
+//#include <ESPAsyncWebServer.h>
+//#include <SPIFFS.h>
+//#include <Keypad.h>
+//#include <WiFi.h>
+
+/*
+  const char* ssid = "";
+  const char* password = "";
+
+  const char* http_username = "admin";
+  const char* http_password = "admin";
+
+  const char* PARAM_INPUT_1 = "state";
+*/
 
 int redLed = 32; //cervena 
 int greenLed = 15; //zelena
@@ -43,6 +57,44 @@ void setup(){
   pinMode(redLed, OUTPUT); //zelena led
   pinMode(greenLed, OUTPUT); //cervena led
   pinMode(pir, INPUT); //pir
+
+  /*
+  // Initialize SPIFFS
+  if(!SPIFFS.begin(true)){
+    Serial.println("An Error has occurred while mounting SPIFFS");
+    return;
+  }
+  // Connect to Wi-Fi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi..");
+  }
+  // Print ESP32 Local IP Address
+  Serial.println(WiFi.localIP());
+  // Route for root / web page
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/index.html", String(), false, processor);
+  });
+  
+  // Route to load style.css file
+  server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/style.css", "text/css");
+  });
+  // Route to set GPIO to HIGH
+  server.on("/on", HTTP_GET, [](AsyncWebServerRequest *request){
+    digitalWrite(ledPin, HIGH);    
+    request->send(SPIFFS, "/index.html", String(), false, processor);
+  });
+  
+  // Route to set GPIO to LOW
+  server.on("/off", HTTP_GET, [](AsyncWebServerRequest *request){
+    digitalWrite(ledPin, LOW);    
+    request->send(SPIFFS, "/index.html", String(), false, processor);
+  });
+  server.begin();
+  */
+ 
 }
 
 void loop(){
@@ -153,7 +205,9 @@ void deactivate(){
   digitalWrite(greenLed, HIGH);
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print(" SYSTEM DEACTIVATED!");
+  lcd.print("SYSTEM ");
+  lcd.setCursor(0,2);
+  lcd.print("DEACTIVATED");
   alarmActive = 0;
   password.reset();
   delay(5000);
@@ -165,6 +219,4 @@ void displayCodeEntryScreen(){    // pocatecni obrazovka pro zadani PINu a aktiv
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Enter PIN:");
-  lcd.setCursor(0,2);
-  lcd.print("Home Security System");
 }
